@@ -66,7 +66,13 @@
           </div>
           <div class="form-field">
             <label for="password">PASSWORD</label>
-            <input type="password" name="password" id="password" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onkeyup="checkPassword()"
+            />
+            <div class="error_msg"></div>
           </div>
           <div class="form-field">
             <label for="confirm_password">CONFIRM PASSWORD</label>
@@ -74,6 +80,7 @@
               type="password"
               name="confirm_password"
               id="confirm_password"
+              onkeyup="checkPassword()"
             />
           </div>
         </form>
@@ -87,4 +94,21 @@
       </div>
     </div>
   </body>
+  <script>
+    function checkPassword() {
+      let password = document.querySelector("#password");
+      let confirm_password = document.querySelector("#confirm_password");
+      let error_msg = document.querySelector(".error_msg");
+
+      if (password.value !== confirm_password.value) {
+        error_msg.innerHTML = "* Passwords do not match";
+        password.classList.add("error");
+        confirm_password.classList.add("error");
+      } else {
+        error_msg.innerHTML = "";
+        password.classList.remove("error");
+        confirm_password.classList.remove("error");
+      }
+    }
+  </script>
 </html>

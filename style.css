@@ -307,11 +307,28 @@ form input {
   
 }
 
-input[type=text]:focus {
+input:focus {
   border-color: rgb(32, 100, 226);
   border-style: solid;
   outline: none;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.error,
+.error:focus {
+  border-color: rgb(225, 69, 69);
+  border-style: solid;
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+div.error_msg {
+  width: 12rem;
+  font-size: 0.7rem;
+  color: red;
+  font-weight: bold;
+
+  margin-top: 0.2rem;
 }
 
 /* Style section with Create Account button */
